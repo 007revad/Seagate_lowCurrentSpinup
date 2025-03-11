@@ -38,6 +38,12 @@ See [How to run from task scheduler](https://github.com/007revad/Seagate_lowCurr
 sudo -s /volume1/scripts/seagate_lowcurrentspinup.sh
 ```
 
+If you want to change the drives' settings back run the script with the disable option:
+
+```YAML
+sudo -s /volume1/scripts/seagate_lowcurrentspinup.sh disable
+```
+
 **Note:** Replace /volume1/scripts/ with the path to where the script is located.
 
 ### Troubleshooting
