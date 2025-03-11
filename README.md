@@ -1,4 +1,4 @@
-# <img src="images/icon.png" width="40"> Seagate Low Current Spinup
+# Seagate Low Current Spinup
 
 <a href="https://github.com/007revad/Seagate_lowCurrentSpinup/releases"><img src="https://img.shields.io/github/release/007revad/REPO_NAME.svg"></a>
 <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2F007revad%2FSeagate_lowCurrentSpinup&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=views&edge_flat=false"/></a>
@@ -12,11 +12,11 @@ Some Synology NAS and Expansion Units do not have enough power to spin-up multip
 
 This script uses Seagate's openSeaChest to set your 20TB and larger Seagate HDDs to stagger their spin-up (PUIS) and enables lowCurrentSpinup.
 
-Power-Up in Standby (PUIS):
-PUIS ensures that drives remain in standby mode during system startup and only spin up when accessed.
-
-Low Current Spin-Up:
-This feature reduces the power draw during spin-up by starting the drives more gradually.
+    Power-Up in Standby (PUIS):
+    PUIS ensures that drives remain in standby mode during system startup and only spin up when accessed.
+    
+    Low Current Spin-Up:
+    This feature reduces the power draw during spin-up by starting the drives more gradually.
 
 ### Download the script
 
