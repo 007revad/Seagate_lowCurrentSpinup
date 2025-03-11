@@ -13,10 +13,10 @@ Some Synology NAS and Expansion Units do not have enough power to spin-up multip
 This script uses Seagate's openSeaChest to set your 20TB and larger Seagate HDDs to stagger their spin-up (PUIS) and enables lowCurrentSpinup.
 
     Power-Up in Standby (PUIS):
-    PUIS ensures that drives remain in standby mode during system startup and only spin up when accessed.
+    PUIS ensures that drives remain in standby mode during system startup and only spin up when accessed
     
     Low Current Spin-Up:
-    This feature reduces the power draw during spin-up by starting the drives more gradually.
+    This feature reduces the power draw during spin-up by starting the drives more gradually
 
 ### Download the script
 
