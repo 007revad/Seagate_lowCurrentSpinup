@@ -64,9 +64,9 @@ If the script won't run check the following:
 ### Screenshots
 
 <!--- <p align="center">Enabling PUIS and Low Power Spinup</p> --->
-<p align="center"><img src="/images/image1.png"></p>
+<p align="center"><img src="/images/enable.png"></p>
 
 <br>
 
 <!--- <p align="center">Disabling PUIS and Low Power Spinup</p> --->
-<p align="center"><img src="/images/image2.png"></p>
+<p align="center"><img src="/images/disable.png"></p>
