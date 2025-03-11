@@ -8,9 +8,11 @@
 
 ### Description
 
-Some Synology NAS and Expansion Units do not have enough power to spin-up multiple Seagate 20TB and larger drives during boot-up.
+Some Synology NAS and Expansion Units do not have enough power to spin-up multiple Seagate large Exos drives during boot-up.
 
-This script uses Seagate's openSeaChest to set your 20TB and larger Seagate HDDs to stagger their spin-up (PUIS) and enables lowCurrentSpinup.
+This script avoids the need to buy and install a higher wattage power supply .
+
+It uses Seagate's openSeaChest v24.08.1 to set your Seagate Exos SATA HDDs to stagger their spin-up (PUIS) and enables lowCurrentSpinup.
 
     Power-Up in Standby (PUIS):
     PUIS ensures that drives remain in standby mode during system startup and only spin up when accessed
@@ -55,10 +57,10 @@ If the script won't run check the following:
 
 ### Screenshots
 
-<!--- <p align="center">Description of image 1 goes here</p> --->
-<p align="center"><img src="/images/IMAGE_NAME.png"></p>
+<!--- <p align="center">Enabling PUIS and Low Power Spinup</p> --->
+<p align="center"><img src="/images/image1.png"></p>
 
 <br>
 
-<!--- <p align="center">Description of image 2 goes here</p> --->
-<p align="center"><img src="/images/IMAGE_NAME.png"></p>
+<!--- <p align="center">Disabling PUIS and Low Power Spinup</p> --->
+<p align="center"><img src="/images/image2.png"></p>
