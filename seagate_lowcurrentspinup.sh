@@ -148,8 +148,9 @@ set_lcs(){
 # Process SATA Seagate HDDs larger than 18TB
 IFS=$'\n' read -r -d '' -a array < <(/opt/openSeaChest_PowerControl --scan |\
     # Only Seagate SATA drives support PUIS
-    #grep -E '^ATA.*ST[2-4][0,9][0]{3,}')
-    grep -E '^ATA.*ST[1-4][0-9][0]{3,}')  # debug with smaller Seagate drives
+    grep -E '^ATA.*ST[1-4][0-9][0]{3,}NT')  # All Seagate Exos drives
+    #grep -E '^ATA.*ST[2-4][0,9][0]{3,}')  # All Seagate 20TB and larger drives
+    #grep -E '^ATA.*ST[1-4][0-9][0]{3,}')  # debug with smaller Seagate Ironwolf drives
 IFS=
 
 if [[ "${#array[@]}" -gt "0" ]]; then
