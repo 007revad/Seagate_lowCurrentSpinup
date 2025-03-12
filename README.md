@@ -10,7 +10,7 @@
 
 Some Synology NAS and Expansion Units do not have enough power to spin-up multiple Seagate large Exos drives during boot-up.
 
-This script avoids the need to buy and install a higher wattage power supply .
+This script avoids the need to buy and install a higher wattage power supply.
 
 It uses Seagate's openSeaChest v24.08.1 to set your Seagate Exos SATA HDDs to stagger their spin-up (PUIS) and enables lowCurrentSpinup.
 
