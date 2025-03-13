@@ -20,6 +20,8 @@ It uses Seagate's openSeaChest v24.08.1 to set your Seagate Exos SATA HDDs to st
     Low Current Spin-Up:
     This feature reduces the power draw during spin-up by starting the drives more gradually
 
+**NOTE:** After running the script you will need to reboot.
+
 ### Download the script
 
 1. Download the latest version _Source code (zip)_ from https://github.com/007revad/Seagate_lowCurrentSpinup/releases
@@ -63,10 +65,10 @@ If the script won't run check the following:
 
 ### Screenshots
 
-<!--- <p align="center">Enabling PUIS and Low Power Spinup</p> --->
+<p align="center">Enabling PUIS and Low Power Spinup</p>
 <p align="center"><img src="/images/enable.png"></p>
 
 <br>
 
-<!--- <p align="center">Disabling PUIS and Low Power Spinup</p> --->
+<p align="center">Disabling PUIS and Low Power Spinup</p>
 <p align="center"><img src="/images/disable.png"></p>
