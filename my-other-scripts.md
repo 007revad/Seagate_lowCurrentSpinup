@@ -86,7 +86,7 @@
   - Download Station Chrome Extension.
  
 - **<a href="https://github.com/007revad/Seagate_lowCurrentSpinup">Seagate_lowCurrentSpinup</a>**
-  - This script avoids the need to buy and install a higher wattage power supply when using large Seagate SATA HDDs.
+  - This script avoids the need to buy and install a higher wattage power supply when using multiple large Seagate SATA HDDs.
 
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [Back to Contents](#contents)
 
