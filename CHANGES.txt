@@ -1,2 +1,7 @@
+v1.0.1
+- Now shows the script version.
+- Now shows "No Seagate Exos or Ironwolf Pro 16TB to 38TB HDDs found." instead of just exiting if no suitable HDDs found.
+- Changed to process supported Seagate drives 16TB and larger. Previously only 20TB and larger.
+
 v1.0.0
 - First release.
