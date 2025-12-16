@@ -3,8 +3,8 @@
 # Some Synology NAS and Expansion Units do not have enough power to spin-up
 # multiple Seagate's 20TB and larger drives during boot-up.
 #
-# This script uses Seagate's openSeaChest to set your 20TB and larger 
-# Seagate HDDs to stagger their spin-up and enables lowCurrentSpinup.
+# This script uses Seagate's openSeaChest to set your 16TB and larger Seagate
+# Exos and Ironwolf Pro HDDs to stagger their spin-up and enables lowCurrentSpinup.
 #
 # Power-Up in Standby (PUIS):
 # PUIS ensures that drives remain in standby mode during system startup and only spin up when accessed.
@@ -16,19 +16,36 @@
 # Script verified at https://www.shellcheck.net/
 #
 # Run in a shell with sudo (replace /volume1/scripts/ with path to script):
-# sudo -s /volume1/scripts/enable_segate_puis.sh
+# sudo -s /volume1/scripts/seagate_lowcurrentspinup.sh
 #
 # To disable PUIS and lowCurrentSpinup
-# sudo -s /volume1/scripts/enable_segate_puis.sh disable
+# sudo -s /volume1/scripts/seagate_lowcurrentspinup.sh disable
 #
+# https://github.com/Seagate/openSeaChest
 # https://www.perplexity.ai/search/my-synology-1821-wont-start-up-DCEWq2y5TvO4WoUsFli_sw
 #------------------------------------------------------------------------------
+
+# openSeaChest version variables
+vSeaChest=v24.08.1
+archive=openSeaChest-v24.08.1-linux-x86_64-portable
+
+scriptver="v1.0.1"
+script=Seagate_lowCurrentSpinup
+#repo="007revad/Seagate_lowCurrentSpinup"
+#scriptname=seagate_lowcurrentspinup
+
+# Show script version
+echo "$script $scriptver"
+
+# Check script is running as root
+if [[ $( whoami ) != "root" ]]; then
+    echo -e "\nERROR This script must be run as sudo or root!\n"
+    exit 1
+fi
 
 if [[ $1 == "disable" ]]; then
     disable="yes"
 fi
-
-archive=openSeaChest-v24.08.1-linux-x86_64-portable
 
 
 # shellcheck disable=SC2317  # Don't warn about unreachable commands in this function
@@ -45,7 +62,7 @@ pause(){
 if [[ ! -f /opt/openSeaChest_PowerControl ]] || [[ ! -f /opt/openSeaChest_Configure ]]; then
     if [[ ! -f "/tmp/${archive}.tar.xz" ]]; then
         echo -e "\nDownloading openSeaChest portable from Seagate"
-        wget -P /tmp/ https://github.com/Seagate/openSeaChest/releases/download/v24.08.1/"${archive:?}".tar.xz &>/dev/null
+        wget -P /tmp/ https://github.com/Seagate/openSeaChest/releases/download/"${vSeaChest:?}/${archive:?}".tar.xz &>/dev/null
     fi
 fi
 
@@ -145,11 +162,13 @@ set_lcs(){
 }
 
 
-# Process SATA Seagate HDDs larger than 18TB
+# Process SATA Seagate HDDs larger than 16TB
 IFS=$'\n' read -r -d '' -a array < <(/opt/openSeaChest_PowerControl --scan |\
     # Only Seagate SATA drives support PUIS
-    grep -E '^ATA.*ST[1-4][0-9][0]{3,}NT')  # All Seagate Exos drives
     #grep -E '^ATA.*ST[2-4][0,9][0]{3,}')  # All Seagate 20TB and larger drives
+    #grep -E '^ATA.*ST[1-4][0-9][0]{3,}NT')  # All Seagate Exos and Ironwolf Pro drives 10TB and larger
+    grep -E '^ATA.*ST(1[68]|[23][02468])[0]{3,}NT')  # All Seagate Exos and Ironwolf Pro 16TB to 38TB
+
     #grep -E '^ATA.*ST[1-4][0-9][0]{3,}')  # debug with smaller Seagate Ironwolf drives
 IFS=
 
@@ -172,7 +191,6 @@ if [[ "${#array[@]}" -gt "0" ]]; then
         set_lcs
 
     done
+else
+    echo -e "\nNo Seagate Exos or Ironwolf Pro 16TB to 38TB HDDs found.\n"
 fi
-
-exit
-
