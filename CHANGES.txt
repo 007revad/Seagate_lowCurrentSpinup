@@ -1,3 +1,6 @@
+v1.0.2
+- Bug fix for not processing Exos and pre-2023 IronWolf Pro drives.
+
 v1.0.1
 - Now shows the script version.
 - Now shows "No Seagate Exos or Ironwolf Pro 16TB to 38TB HDDs found." instead of just exiting if no suitable HDDs found.

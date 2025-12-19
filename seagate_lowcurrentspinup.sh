@@ -29,7 +29,7 @@
 vSeaChest=v24.08.1
 archive=openSeaChest-v24.08.1-linux-x86_64-portable
 
-scriptver="v1.0.1"
+scriptver="v1.0.2"
 script=Seagate_lowCurrentSpinup
 #repo="007revad/Seagate_lowCurrentSpinup"
 #scriptname=seagate_lowcurrentspinup
@@ -165,9 +165,10 @@ set_lcs(){
 # Process SATA Seagate HDDs larger than 16TB
 IFS=$'\n' read -r -d '' -a array < <(/opt/openSeaChest_PowerControl --scan |\
     # Only Seagate SATA drives support PUIS
+    # https://grep.js.org/  Online grep tester
     #grep -E '^ATA.*ST[2-4][0,9][0]{3,}')  # All Seagate 20TB and larger drives
-    #grep -E '^ATA.*ST[1-4][0-9][0]{3,}NT')  # All Seagate Exos and Ironwolf Pro drives 10TB and larger
-    grep -E '^ATA.*ST(1[68]|[23][02468])[0]{3,}NT')  # All Seagate Exos and Ironwolf Pro 16TB to 38TB
+    #grep -E '^ATA.*ST[1-4][0-9][0]{3,}N[T|E|M|G]')  # All Seagate Exos and Ironwolf Pro drives 10TB and larger
+    grep -E '^ATA.*ST(1[68]|[2-5][02468])[0]{3,}N[T|E|M|G]')  # All Seagate Exos and Ironwolf Pro 16TB to 58TB
 
     #grep -E '^ATA.*ST[1-4][0-9][0]{3,}')  # debug with smaller Seagate Ironwolf drives
 IFS=
