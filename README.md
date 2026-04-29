@@ -8,7 +8,7 @@
 
 ### Description
 
-Some Synology NAS and Expansion Units do not have enough power to spin-up multiple Seagate large Exos drives during boot-up.
+Some Synology NAS and Expansion Units do not have enough power to spin-up multiple large Seagate Exos drives during boot-up.
 
 This script avoids the need to buy and install a higher wattage power supply.
 
